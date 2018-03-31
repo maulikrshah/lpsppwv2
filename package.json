@@ -1,0 +1,25 @@
+{
+  "name": "lpsppwv2",
+  "version": "1.0.0",
+  "description": "sendgrid",
+  "main": "sendmail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maulikrshah/lpsppwv2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maulikrshah/lpsppwv2/issues"
+  },
+  "homepage": "https://github.com/maulikrshah/lpsppwv2#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "dotenv": "^5.0.1",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {}
+}
