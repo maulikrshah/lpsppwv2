@@ -6,20 +6,20 @@ const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey('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');
 
-console.log('Sendgrid API:', process.env.SENDGRID_API_KEY);
+//console.log('Sendgrid API:', process.env.SENDGRID_API_KEY);
 
-//const msg = {
+const msg = {
 
-  //to: 'lpsminimart@verizon.net',
+  to: 'lpsminimart@verizon.net',
 
-  //from: 'lpsminimart@sendgrid.com',
+  from: 'lpsminimart@sendgrid.com',
 
-  //subject: 'Testing 3.31.1019',
+  subject: 'Testing 3.31.400',
 
-  //text: 'testing setApi',
+  text: 'testing setApi',
 
-  //html: '<strong>setAPI</strong>',
+  html: '<strong>setAPI</strong>',
 
-//};
+};
 
-//sgMail.send(msg);
+sgMail.send(msg);
