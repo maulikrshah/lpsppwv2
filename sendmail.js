@@ -7,9 +7,9 @@ http.createServer(function (request, response){
 	response.end('Server Started\n');	
 }).listen(8080);
 
-/*
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+/*
 const msg = {
 
   to: 'lpsminimart@verizon.net',
