@@ -16,7 +16,7 @@ const msg = {
 
   from: 'lpsminimart@sendgrid.com',
 
-  subject: 'Testing 4.22.550',
+  subject: 'Testing 4.22.950',
 
   text: 'testing setApi',
 
