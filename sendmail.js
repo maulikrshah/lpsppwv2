@@ -1,12 +1,14 @@
 require('dotenv').config();
-
+var http = require('http');
 const sgMail = require('@sendgrid/mail');
 
+http.createServer(function (request, response){
+	response.writeHead(200, {'Content-Type': 'text/plain'});
+	response.end('Server Started\n');	
+}).listen(8080);
+
+/*
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-
-
-//console.log('Sendgrid API:', process.env.SENDGRID_API_KEY);
 
 const msg = {
 
@@ -23,3 +25,4 @@ const msg = {
 };
 
 sgMail.send(msg);
+*/
