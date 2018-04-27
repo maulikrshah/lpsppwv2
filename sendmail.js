@@ -4,7 +4,12 @@ const sgMail = require('@sendgrid/mail');
 
 http.createServer(function (request, response){
 	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.end('Server Started\n');	
+	//response.end('Server Started\n');
+	response.write('<form action="emailFuelReadings" method="post" enctype="multipart/form-data">');
+	response.write('<input type="text" name="gasReadingReg"><br>');
+	response.write('<input type="submit">');
+	response.write('</form>');
+	return response.end();	
 }).listen(8080);
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
