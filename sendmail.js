@@ -26,7 +26,7 @@ app.get('/process_get_form', function (req, res) {
 
   from: 'lpsminimart@sendgrid.com',
 
-  subject: 'Testing 4.22.950',
+  subject: req.query.first_name,
 
   text: 'testing setApi',
 
