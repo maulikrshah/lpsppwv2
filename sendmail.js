@@ -5,8 +5,9 @@ var app = express();
 const sgMail = require('@sendgrid/mail');
 
 app.use(express.static('public'));
-app.get('index.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index.htm" );
+app.get('/index.htm', function (req, res) {
+   //res.sendFile( __dirname + "/" + "index.htm" );
+     res.sendFile( "index.htm" );
 })
 
 var server = app.listen(8080, function () {
