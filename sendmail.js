@@ -5,14 +5,15 @@ var app = express();
 const sgMail = require('@sendgrid/mail');
 
 app.use(express.static('public'));
-app.get('/', function (req, res) {
-   //res.sendFile( __dirname + "/" + "index.htm" );
-     res.sendFile( "index.htm" );
+
+app.get('/index.htm', function (req, res) {
+   res.sendFile( __dirname + "/" + "index.htm" );
+   //res.sendFile( "index.htm" );
 })
 
 var server = app.listen(8080, function () {
-   var host = server.address().address;
-   var port = server.address().port;
+   var host = server.address().address
+   var port = server.address().port
    
    console.log("Example app listening at http://%s:%s", host, port)
 })
