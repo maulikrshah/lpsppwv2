@@ -8,29 +8,29 @@ app.use(express.static('public'));
 
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
-   //res.sendFile( "index.htm" );
 })
 
-app.get('/process_get_form', function (req, res) {
+app.get('/process_get_veeder', function (req, res) {
    // Prepare output in JSON format
    response = {
-      first_name:req.query.first_name,
-      last_name:req.query.last_name
+      regular_vol:req.query.tc_vol_reg,
+      super_vol:req.query.tc_vol_sup,
+      diesel_vol:req.query.tc_vol_die
    };
 
    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
    const msg = {
 
-  to: 'lpsminimart@verizon.net',
+   to: 'lpsminimart@verizon.net',
 
-  from: 'lpsminimart@sendgrid.com',
+   from: 'lpsminimart@sendgrid.com',
 
-  subject: req.query.first_name,
+   subject: req.query.tc_vol_reg,
 
-  text: 'testing setApi',
+   text: 'testing setApi',
 
-  html: '<strong>setAPI</strong>',
+   html: '<strong>setAPI</strong>',
 
 };
 
@@ -47,34 +47,3 @@ var server = app.listen(8080, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })
 
-/*
-http.createServer(function (request, response){
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	//response.end('Server Started\n');
-	response.write('<form action="emailFuelReadings" method="post" enctype="multipart/form-data">');
-	response.write('<input type="text" name="gasReadingReg"><br>');
-	response.write('<input type="submit">');
-	response.write('</form>');
-	return response.end();	
-}).listen(8080);
-*/
-
-//sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-/*
-const msg = {
-
-  to: 'lpsminimart@verizon.net',
-
-  from: 'lpsminimart@sendgrid.com',
-
-  subject: 'Testing 4.22.950',
-
-  text: 'testing setApi',
-
-  html: '<strong>setAPI</strong>',
-
-};
-
-sgMail.send(msg);
-*/
