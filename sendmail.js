@@ -6,6 +6,13 @@ const sgMail = require('@sendgrid/mail');
 
 app.use(express.static('public'));
 
+var myDBport = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8081;
+var myDBip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL;
+var mongoURLLabel = "";
+
+console.log("Example app listening at http://%s:%s", myDBport, myDBip, mongoURL)
+
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
    //res.sendFile( __dirname + "/" + "images/lps.png" );
