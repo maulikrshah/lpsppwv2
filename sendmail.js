@@ -26,7 +26,7 @@ app.get('/process_get_veeder', function (req, res) {
 	to: 'Meghna <lpsminimart@verizon.net>',
 	from: 'System <lpsminimart@sendgrid.com>',
 	subject: 'Daily Gas Readings',
-	text: 'Regular: ' + regular_vol,
+	text: 'Regular: ' + req.query.tc_vol_reg,
 };
 
 sgMail.send(msg);
