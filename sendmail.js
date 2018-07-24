@@ -23,8 +23,8 @@ app.get('/process_get_veeder', function (req, res) {
    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
    const msg = {
-	to: 'Meghna <lpsminimart@verizon.net>',
-	from: 'System <lpsminimart@sendgrid.com>',
+	to: 'Meghna <baku2915@gmail.com>',
+	from: 'LPS Mini Mart <lpsminimart@sendgrid.com>',
 	subject: 'Daily Gas Readings',
 	text: 'Regular: ' + req.query.tc_vol_reg,
 };
