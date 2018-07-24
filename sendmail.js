@@ -5,7 +5,7 @@ var app = express();
 const sgMail = require('@sendgrid/mail');
 //var mongodb = require('mongodb');
 
-app.use(express.static('public'));
+app.use(express.static('images'));
 
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
